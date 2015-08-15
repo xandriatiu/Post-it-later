@@ -28,15 +28,15 @@ class Posts(models.Model):
 class Bots(Sortable):
 
     SMTP = 'smtp'
-    FACEBOOK = 'facebook'
-    TWITTER = 'twitter'
     PLURK = 'plurk'
+    TWITTER = 'twitter'
+    FACEBOOK = 'facebook'
 
     social_media_choices = (
         (SMTP, 'Email'),
-        (FACEBOOK, 'Facebook'),
-        (TWITTER, 'Twitter'),
         (PLURK, 'Plurk'),
+        (TWITTER, 'Twitter'),
+        (FACEBOOK, 'Facebook'),
     )
 
     name = models.CharField(max_length=255)

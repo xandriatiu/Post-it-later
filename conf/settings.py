@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     # local apps
     'users',
     'queue',
+    'unlockpaidfeatures',
 )
 
 MIDDLEWARE_CLASSES = (
