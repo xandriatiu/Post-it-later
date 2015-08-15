@@ -1,0 +1,11 @@
+Django==1.8.3
+# MySQL-python==1.2.5
+Pillow==2.9.0
+argparse==1.2.1
+django-bootstrap-form==3.2
+django-braces==1.8.1
+django-flat-theme==0.9.5
+easy-thumbnails==2.2
+# psycopg2==2.6.1
+six==1.9.0
+wsgiref==0.1.2
