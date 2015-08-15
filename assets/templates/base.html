@@ -9,12 +9,14 @@
         <meta name="description" content="{% block meta_description %}{% endblock %}">
         {% block extra_meta_tags %}{% endblock extra_meta_tags %}
 
-        <title>{% block site_title %}{% endblock site_title %}</title>
+        <title>SlackDroid{% block site_title %}{% endblock site_title %}</title>
 
         {% block extra_head %}{% endblock extra_head %}
 
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+        <link rel="shortcut icon" href="/static/css/icon.ico">
+
         {% block extra_css %}{% endblock extra_css %}
 
         <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
