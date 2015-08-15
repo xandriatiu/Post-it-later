@@ -12,7 +12,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', TemplateView.as_view(template_name='user/index.html')),
+    url(r'^login/', TemplateView.as_view(template_name='user/index.html')),
 ]
 
 if settings.DEBUG:
