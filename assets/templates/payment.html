@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<br>
+<br>
+<br>
+<br>
+
+<table class="table table col-md-12">Paypal Form
+<form method="post" action="">
+	{% csrf_token %}
+  {{ form }}
+
+</form>
+  <br>
+</table>
+  <input type="submit" value="Pay Up">
+
+{% endblock content %} 
