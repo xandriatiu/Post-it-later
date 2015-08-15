@@ -25,10 +25,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'userprofile',
+    'queue',
 
     # third party apps
     'easy_thumbnails',
     'bootstrapform',
+    'djcelery',
+    'kombu.transport.django'
 
     # local apps
 )

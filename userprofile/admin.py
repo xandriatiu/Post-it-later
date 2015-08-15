@@ -1,7 +1,10 @@
 from django.contrib import admin
-from .models import UserProfile
+from .models import UserProfile, Achievement, Redeem
+
 
 class UserProfileAdmin(admin.ModelAdmin):
-	list_display = ['first_name', 'last_name', 'avatar_url', 'date_created']
+	list_display = ['user']
 
 admin.site.register(UserProfile, UserProfileAdmin)
+admin.site.register(Achievement)
+admin.site.register(Redeem)
