@@ -15,7 +15,10 @@
 
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
-        <link rel="shortcut icon" href="/static/css/icon.ico">
+        <link rel="shortcut icon" href="/static/img/icon.ico">
+
+        <link href="/static/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
         {% block extra_css %}{% endblock extra_css %}
 
@@ -25,9 +28,27 @@
     <body>
         <header>
             {% block header %}
-                <nav>
-                    {% block nav %}{% endblock nav %}
+                <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+                    <div class="container topnav">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>-->
+                            <img src="/static/img/logo01.gif" class="logogif"/>
+                            <a class="navbar-brand topnav" href="#">SlackDroid</a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            {% block navtab %}{% endblock navtab %}
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
                 </nav>
+
             {% endblock header %}
         </header>
 
@@ -37,7 +58,8 @@
             {% block footer %}{% endblock footer %}
         </footer>
 
-        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}">
+        </script>
         {% block extra_js %}{% endblock extra_js %}
     </body>
 </html>
