@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'^', include(users_urls, namespace='users')),
 	url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^login/', TemplateView.as_view(template_name='user/index.html')),
-
+    url(r'^profile/', TemplateView.as_view(template_name='user/profile.html')),
 ]
 
 if settings.DEBUG:

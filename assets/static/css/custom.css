@@ -7,8 +7,14 @@ body {
 	background-color: #700202;
 }
 
+
 .logogif {
 
+.notnav {
+	margin-top: 100px;
+}
+
+.logo-gif {
 	width: 70px;
 }
 
@@ -26,3 +32,8 @@ body {
 	border-bottom: 0px;
 }
 
+
+.navbar-brand {
+    float: none;
+    padding: 0px 0px 0px 30px;
+}
