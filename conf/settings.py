@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'djcelery',
     'kombu.transport.django',
     'social.apps.django_app.default',
+    'fixture_magic',
 
     # local apps
     'users',

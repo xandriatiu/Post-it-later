@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^', include(users_urls, namespace='users')),
 	url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^login/', TemplateView.as_view(template_name='user/index.html')),
+
 ]
 
 if settings.DEBUG:
