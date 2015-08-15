@@ -24,16 +24,18 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'userprofile',
-    'queue',
+
 
     # third party apps
     'easy_thumbnails',
     'bootstrapform',
     'djcelery',
-    'kombu.transport.django'
+    'kombu.transport.django',
+    'social.apps.django_app.default',
 
     # local apps
+    'users',
+    'queue',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,6 +50,37 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'conf.urls'
+
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.twitter.TwitterOAuth',
+    'social.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+
+)
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.user.create_user',
+    'users.pipeline.save_profile',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details'
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '986559941408186'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'a3c820b1665b39fe3df81870b0799f5e'
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {'locale': 'en_US'}
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['publish_actions']
+
+SOCIAL_AUTH_TWITTER_KEY = '4SSmH4zcFhOxLr7LZBMS1jzdD'
+SOCIAL_AUTH_TWITTER_SECRET = 'ts3klVMLrttxhSnofN79pKi3YSx2exZglmDwB1tKnztZpZnpqV'
 
 TEMPLATES = [
     {
