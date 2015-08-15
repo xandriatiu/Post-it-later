@@ -33,6 +33,8 @@ INSTALLED_APPS = (
     'kombu.transport.django',
     'social.apps.django_app.default',
     'fixture_magic',
+    'paypal.standard',
+    'paypal.pro',
 
     # local apps
     'users',
@@ -82,6 +84,17 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['publish_actions']
 
 SOCIAL_AUTH_TWITTER_KEY = '4SSmH4zcFhOxLr7LZBMS1jzdD'
 SOCIAL_AUTH_TWITTER_SECRET = 'ts3klVMLrttxhSnofN79pKi3YSx2exZglmDwB1tKnztZpZnpqV'
+
+PAYPAL_TEST = True
+PAYPAL_WPP_USER = "yoni_0326_api1.yahoo.com"
+PAYPAL_WPP_PASSWORD = "7CJ8BHSF7856NVQ8"
+PAYPAL_WPP_SIGNATURE = "A30OYQ0RUJGyss-TGAD-d8NcnL02AK1IeToIPymys74suuZgndJXC6ul"
+PAYPAL_RECEIVER_EMAIL = ""
+
+SOUTH_DATABASE_ADAPTERS = {
+     'default': "south.db.postgresql_psycopg2"
+ }
+
 
 TEMPLATES = [
     {
