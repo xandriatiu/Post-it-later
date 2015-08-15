@@ -1,0 +1,28 @@
+* {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+body {
+	background-color: #700202;
+}
+
+.logogif {
+
+	width: 70px;
+}
+
+.nav li:hover {
+	background-color: #700202;
+	border-bottom: 1px solid #700202;
+}
+
+.navbar-default .navbar-nav li a:hover {
+	color: white;
+	border-bottom: 0px solid #700202;
+}
+
+.navbar {
+	border-bottom: 0px;
+}
+
