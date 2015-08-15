@@ -1,19 +1,58 @@
 {% extends 'base.html' %}
 
+{% block extra_css %}
+	<style>
+		label {
+			color: white;
+		}
+
+		.HeadingPay {
+			color: white;
+			font-weight: 900;
+			text-align: center;
+		}
+
+		#donebtnPayPal {
+			width: 60%;
+			font-weight: 900;
+			padding: 5px;
+		}
+
+		#id_cvv2,
+		#id_expdate_1,
+		#id_expdate_0,
+		#id_acct,
+		#id_zip,
+		#id_countrycode,
+		#id_state,
+		#id_city,
+		#id_street,
+		#id_lastname,
+		#id_firstname, {
+			color: black;
+		}
+
+	</style>
+{% endblock extra_css %}
+
 {%block content%}
 <br>
 <br>
 <br>
 <br>
 
-<table class="table table col-md-12">Paypal Form
-<form method="post" action="">
-	{% csrf_token %}
-  {{ form }}
+<table class="table table col-md-12">
+	<h1 class="HeadingPay">Paypal Form</h1>
+	
+	<form method="post" action="">
+		{% csrf_token %}
+	  {{ form }}
 
-</form>
-  <br>
+	</form>
+
+	<br>
+
 </table>
-  <input type="submit" value="Pay Up">
+  <input type="submit" value="Done" id="donebtnPayPal">
 
 {% endblock content %} 
