@@ -4,13 +4,18 @@ from django.http import HttpResponseRedirect
 from django.core import urlresolvers
 from django.contrib import messages
 
+<<<<<<< HEAD
 from users.models import Achievement, UserProfile
+=======
+from users.models import Achievement, Redeem, UserProfile
+>>>>>>> feff904eaad24188a6f39bef6a41b0dfa75cc846
 from queue.models import Bots
 from unlockpaidfeatures.forms import BotsForms
 
 class SettingsView(View):
 
     def get(self, request, *args, **kwargs):
+<<<<<<< HEAD
         user = request.user
         profile = user.profile.first()
         bots = profile.bots.all()
@@ -33,3 +38,14 @@ class SettingsView(View):
         return render(request, 'user/achievements.html', {
             'botsmeta': botsmeta,
         })
+=======
+        context = {}
+        context['bots'] = UserProfile.object.get('bots')
+        coins = UserProfile.object.get('coins')
+        price = Bots.object.get('price')
+        image = Bots.object.get('image')
+        for bot in bots
+            if coins >= price
+                image = 
+            return render(request, 'user/test.html', context)
+>>>>>>> feff904eaad24188a6f39bef6a41b0dfa75cc846
