@@ -1,12 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block content %}
     <form action="" method="post">
         {% csrf_token %}
-            <div>
-                {% for bot in bots %}
-                    <p>{{ bot }}</p>
-                {% endfor %}
-            </div>
-        </form>
+        <div>
+            {% for botmeta in botsmeta %}
+            	<div class="col-md-3">
+                	<img src="{{ botmeta.image }}" class="img-responsive margin img-thumbnail panel-heading">
+                </div>
+            {% endfor %}
+        </div>
+    </form>
 {% endblock %}

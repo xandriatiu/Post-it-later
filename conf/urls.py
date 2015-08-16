@@ -15,12 +15,11 @@ from unlockpaidfeatures import urls as upf_urls
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(users_urls, namespace='users')),
-    url(r'^check/', include(upf_urls, namespace='checkurl')),
+    url(r'^achievements/', include(upf_urls, namespace='checkurl')),
 	url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^login/', TemplateView.as_view(template_name='user/index.html')),
     url(r'^profile/', TemplateView.as_view(template_name='user/profile.html')),
     url(r'^purchase/', TemplateView.as_view(template_name='user/purchase.html')),
-    url(r'^achievements/', TemplateView.as_view(template_name='user/achievements.html')),
 ]
 
 if settings.DEBUG:

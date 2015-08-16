@@ -93,7 +93,7 @@ PAYPAL_WPP_SIGNATURE = "A30OYQ0RUJGyss-TGAD-d8NcnL02AK1IeToIPymys74suuZgndJXC6ul
 PAYPAL_RECEIVER_EMAIL = ""
 
 SOUTH_DATABASE_ADAPTERS = {
-     'default': "south.db.postgresql_psycopg2"
+     'default' : "south.db.postgresql_psycopg2"
  }
 
 
