@@ -1,58 +1,99 @@
 {% extends 'base.html' %}
 
 {% block extra_css %}
-	<style>
-		label {
-			color: white;
-		}
+<style>
+	label {
+		color: white;
+	}
 
-		.HeadingPay {
-			color: white;
-			font-weight: 900;
-			text-align: center;
-		}
+	.intro-message {
+        font-size: 80px;
+        color: white;
+        margin: -30px 0px 30px 0px;
+        padding: 0px 0px 0px 0px;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    }
 
-		#donebtnPayPal {
-			width: 60%;
-			font-weight: 900;
-			padding: 5px;
-		}
+	#donebtnPayPal {
+		width: 60%;
+		font-weight: 900;
+		padding: 5px;
+	}
 
-		#id_cvv2,
-		#id_expdate_1,
-		#id_expdate_0,
-		#id_acct,
-		#id_zip,
-		#id_countrycode,
-		#id_state,
-		#id_city,
-		#id_street,
-		#id_lastname,
-		#id_firstname, {
-			color: black;
-		}
+	#id_cvv2,
+	#id_expdate_1,
+	#id_expdate_0,
+	#id_acct,
+	#id_zip,
+	#id_countrycode,
+	#id_state,
+	#id_city,
+	#id_street,
+	#id_lastname,
+	#id_firstname, {
+		color: black;
+	}
 
-	</style>
+	input {
+		width: 80%;
+		float: right;
+	}
+	
+	#id_countrycode {
+		float: right;
+	}
+
+	table tbody tr td span {
+		float: right;
+	}
+</style>
 {% endblock extra_css %}
 
+{% block navtab %}
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        <a href="../purchase">Purchase</a>
+    </li>
+    <li>
+        <a href="../achievements">Achievements</a>
+    </li>
+    <li>
+        <a href="../payment-url">Payment</a>
+    </li>
+    <li>
+        <a href="{% url 'users:logout' %}">Log Out</a>
+    </li>
+</ul>
+{% endblock navtab %}
+
 {%block content%}
-<br>
-<br>
-<br>
-<br>
-
-<table class="table table col-md-12">
-	<h1 class="HeadingPay">Paypal Form</h1>
-	
-	<form method="post" action="">
-		{% csrf_token %}
-	  {{ form }}
-
-	</form>
-
-	<br>
-
-</table>
-  <input type="submit" value="Done" id="donebtnPayPal">
-
+<div class="notnav">
+    <div class="container">
+    	<div class="row">
+    		<div class="intro-message text-center">
+    			Paypal Form
+    		</div>
+    	</div>
+        <div class="row">
+        	<form method="post" action="">
+        		<div class="col-lg-3"></div>
+        		<div class="col-lg-6">
+        			<div class="row">
+			            <table class="table table-condensed">
+								{% csrf_token %}
+							  	{{ form }}
+						</table>
+					</row>
+					<div class="row">
+						<div class="col-lg-8"></div>
+        				<div class="col-lg-4">
+							<input type="submit" value="Done" id="donebtnPayPal">
+						</div>
+					</row>
+				</div>
+			</form>
+        </div>
+        
+    </div>
+</div>
 {% endblock content %} 

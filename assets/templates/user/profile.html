@@ -73,13 +73,16 @@
 {% block navtab %}
 <ul class="nav navbar-nav navbar-right">
     <li>
-        <a href="../purchase">Purchase</a>
+        <a href='../purchase'>Purchase</a>
     </li>
     <li>
         <a href="../achievements">Achievements</a>
     </li>
     <li>
-        <a href="#">Log Out</a>
+        <a href="../payment-url">Payment</a>
+    </li>
+    <li>
+        <a href="{% url 'users:logout' %}">Log Out</a>
     </li>
 </ul>
 {% endblock navtab %}
@@ -167,7 +170,7 @@
 					</div>
 					<div class="col-lg-7">
 						<div class="bot-name right-part">
-							Slacker Droid <i class="fa fa-male fa-1x"></i>
+							Facebook Droid <i class="fa fa-male fa-1x"></i>
 						</div>
 					</div>
 				</div>

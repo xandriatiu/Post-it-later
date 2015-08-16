@@ -11,7 +11,7 @@ from paypal.pro.views import PayPalPro
 
 class DashboardView(LoginRequiredMixin, View):
 				
-	template_name = 'user/login.html'
+	template_name = 'user/profile.html'
 
 	def get(self, request, *args, **kwargs):
 		context = {}
@@ -34,10 +34,11 @@ class LoginView(View):
 class LogoutView(LoginRequiredMixin, View):
 
 	template_name = 'user/index.html'
+	context = {}
 
 	def get(self, request, *args, **kwargs):
 		auth.logout(request)
-		return HttpResponseRedirect(reverse('users:dashboard'))
+		return HttpResponseRedirect(urlresolvers.reverse('users:login'))
 
 
 
